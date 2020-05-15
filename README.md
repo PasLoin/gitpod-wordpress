@@ -2,7 +2,7 @@
 
 [Gitpod](https://www.gitpod.io) is a ready-to-code dev environment with a single click. It will allows you to develop plugin or theme directly from your browser.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/luizbills/gitpod-wordpress)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/PasLoin/gitpod-wordpress)
 
 ## Features
 

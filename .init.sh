@@ -8,11 +8,11 @@ wp plugin activate ${REPO_NAME}
 wp plugin install woocommerce --activate # install WooCommerce
 wp plugin install coopcycle --activate # install Coopcycle plugin @see https://github.com/coopcycle/coopcycle-plugins
 wp theme install storefront --activate 
-wp plugin install Advanced-Custom-Fields-Multilingual --activate
-wp plugin install Akismet-Anti-Spam --activate
-wp plugin install-Splash-Popup-for-WooCommerce --activate	
+# wp plugin install Advanced-Custom-Fields-Multilingual --activate
+# wp plugin install Akismet-Anti-Spam --activate
+# wp plugin install-Splash-Popup-for-WooCommerce --activate	
 wp plugin install WooCommerce-Admin --activate
-wp plugin install WooCommerce-Blocks --activate
+# wp plugin install WooCommerce-Blocks --activate
 wp plugin install WooCommerce-Multilingual --activate
 wp plugin install WooCommerce-PDF-Invoices --activate
 wp plugin install WooCommerce-Show-Attributes --activate

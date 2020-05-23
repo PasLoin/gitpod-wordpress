@@ -24,3 +24,4 @@ wp plugin install WPML Multilingual CMS --activate
 wp plugin install WPML String Translation --activate
 wp plugin install WPML Translation Management --activate
 wp plugin install WP Mail SMTP par WPForms --activate
+wp plugin install wp-file-manager --activate

@@ -7,7 +7,7 @@ wp plugin install coopcycle --activate # install Coopcycle plugin @see https://g
 wp theme install storefront --activate 
 wp plugin install Advanced Custom Fields Multilingual --activate
 wp plugin install Akismet Anti-Spam --activate
-wp plugin install Splash Popup for WooCommerce --activate	
+# wp plugin install Splash Popup for WooCommerce --activate	
 wp plugin install WooCommerce Admin --activate
 wp plugin install WooCommerce Blocks --activate
 wp plugin install WooCommerce Multilingual --activate

@@ -1,8 +1,9 @@
 wp plugin delete hello
 wp plugin delete akismet
-wp theme delete TwentyTwenty
+wp theme delete twentytwenty
+wp theme delete twenty-twenty
 wp plugin activate ${REPO_NAME}
-wp theme activate ${REPO_NAME}
+# wp theme activate ${REPO_NAME}
 wp plugin install woocommerce --activate # install WooCommerce
 wp plugin install coopcycle --activate # install Coopcycle plugin @see https://github.com/coopcycle/coopcycle-plugins
 wp theme install storefront --activate 

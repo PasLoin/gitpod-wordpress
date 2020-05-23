@@ -18,6 +18,7 @@ wp plugin install WooCommerce-Multilingual --activate
 wp plugin install WooCommerce-PDF-Invoices --activate
 wp plugin install WooCommerce-Show-Attributes --activate
 wp plugin install WooCommerce-Stripe-Gateway --activate
+wp plugin install WooCommerce Stripe --activate
 #wp plugin install WPAllExport --activate
 wp plugin install WP-All-Export --activate
 wp plugin install WP-All-Import --activate

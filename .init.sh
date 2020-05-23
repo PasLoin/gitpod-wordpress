@@ -2,6 +2,8 @@ wp plugin delete hello
 wp plugin delete akismet
 wp theme delete twentytwenty
 wp theme delete twenty-twenty
+wp theme delete Twenty-Twenty
+wp theme install RealDesign
 wp plugin activate ${REPO_NAME}
 # wp theme activate ${REPO_NAME}
 wp plugin install woocommerce --activate # install WooCommerce
@@ -28,3 +30,5 @@ wp plugin install WPML-Multilingual-CMS --activate
 wp plugin install WPML-String-Translation --activate
 wp plugin install WPML-Translation-Management --activate
 wp plugin install wp-file-manager --activate
+wp plugin install Duplicator – WordPress Migration Plugin --activate
+wp plugin install duplicator

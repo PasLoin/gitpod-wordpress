@@ -14,11 +14,12 @@ wp plugin install WooCommerce Multilingual --activate
 wp plugin install WooCommerce PDF Invoices --activate
 wp plugin install WooCommerce Show Attributes --activate
 wp plugin install WooCommerce Stripe Gateway --activate
-wp plugin install WP All Export --activate
+wp plugin install WPAllExport --activate
+wp plugin install WP_All_Export --activate
 wp plugin install WP All Import --activate
 wp plugin install WP File Manager --activate
 wp plugin install WP Mail SMTP by WPForms --activate
-wp plugin install WP-Matomo (WP-Piwik) --activate
+# wp plugin install WP-Matomo (WP-Piwik) --activate
 wp plugin install WPML All Import --activate
 wp plugin install WPML Media --activate
 wp plugin install WPML Multilingual CMS --activate

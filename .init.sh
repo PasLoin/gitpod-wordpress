@@ -16,8 +16,8 @@ wp plugin install WooCommerce Stripe Gateway --activate
 wp plugin install WP All Export --activate
 wp plugin install WP All Import --activate
 wp plugin install WP File Manager --activate
-wp plugin install WP Mail SMTP --activate
-wp plugin install WP-Matomo --activate
+wp plugin install WP Mail SMTP by WPForms --activate
+wp plugin install WP-Matomo (WP-Piwik) --activate
 wp plugin install WPML All Import --activate
 wp plugin install WPML Media --activate
 wp plugin install WPML Multilingual CMS --activate

@@ -2,7 +2,7 @@ wp plugin delete hello
 wp plugin delete akismet
 # wp theme delete twenty-twenty
 # wp theme delete Twenty-Twenty
-wp theme install RealDesign
+wp theme install realdesign
 wp plugin activate ${REPO_NAME}
 # wp theme activate ${REPO_NAME}
 wp plugin install woocommerce --activate # install WooCommerce

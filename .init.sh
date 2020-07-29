@@ -38,7 +38,7 @@ wp option set woocommerce_store_address_2 ""
 wp option set woocommerce_store_city "Bruxelles"
 wp option set woocommerce_default_country "BE"
 wp option set woocommerce_store_postalcode "1080"
-wp option set woocommerce_currency "CEUR"
+wp option set woocommerce_currency "EUR"
 wp option set woocommerce_product_type "physical"
 wp option set woocommerce_allow_tracking "no"
 wp option set --format=json woocommerce_stripe_settings '{"enabled":"no","create_account":false,"email":false}'

@@ -32,6 +32,7 @@ wp plugin install WPML-Translation-Management --activate
 wp plugin install wp-file-manager --activate
 wp plugin install Duplicator – WordPress Migration Plugin --activate
 wp theme delete twentytwenty
+wp theme delete TwentyNineteen
 wp theme activate woo.delivery-master
 wp option set woocommerce_store_address "Place de la Minoterie 10"
 wp option set woocommerce_store_address_2 ""

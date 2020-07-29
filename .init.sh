@@ -48,3 +48,4 @@ wp option set --format=json woocommerce_cheque_settings '{"enabled":"no"}'
 wp option set --format=json woocommerce_bacs_settings '{"enabled":"no"}'
 wp option set --format=json woocommerce_cod_settings '{"enabled":"yes"}'
 wp wc --user=admin tool run install_pages
+wp import wp-content/plugins/woocommerce/sample-data/sample_products.xml --authors=skip

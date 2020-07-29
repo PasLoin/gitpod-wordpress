@@ -74,4 +74,4 @@ RUN wget -q https://wordpress.org/latest.zip -O $HOME/wordpress.zip && \
 ### Child theme storefront ###
 USER gitpod
 RUN wget -q https://github.com/PasLoin/woo.delivery/archive/master.zip -O $HOME/gitpod-wordpress/woodelivery.zip && \
-    unzip -qn $HOME/gitpod-wordpress/wp-content/wodelivery.zip -d $HOME
+    unzip -qn $HOME/gitpod-wordpress/wp-content/wodelivery.zip -d $HOME/gitpod-wordpress

@@ -32,3 +32,4 @@ wp plugin install WPML-Translation-Management --activate
 wp plugin install wp-file-manager --activate
 wp plugin install Duplicator – WordPress Migration Plugin --activate
 wp theme delete twentytwenty
+wp theme activate woo.delivery-master

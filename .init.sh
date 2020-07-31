@@ -32,7 +32,7 @@ wp plugin install WPML-Translation-Management --activate
 wp plugin install wp-file-manager --activate
 wp plugin install Duplicator – WordPress Migration Plugin --activate
 wp theme delete twentytwenty
-wp theme delete Twenty-Nineteen
+wp theme delete TwentyNineteen
 wp theme activate woo.delivery-master
 wp option set woocommerce_store_address "Place de la Minoterie 10"
 wp option set woocommerce_store_address_2 ""
@@ -50,3 +50,4 @@ wp option set --format=json woocommerce_cod_settings '{"enabled":"yes"}'
 wp wc --user=admin tool run install_pages
 wp plugin install wordpress-importer --activate
 wp import https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.xml --authors=skip
+wp wc product create --title="Test Product" --type=simple --sku=WCCLITESTP --regular_price=20

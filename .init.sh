@@ -56,3 +56,4 @@ wp wc customer create --email='woo@woo.local' --user=1 --billing='{"first_name":
 wp plugin install WooCommerce-Show-Attributes --activate
 wp plugin install rest-api --activate
 wp --info
+wp package install https://github.com/wpbullet/wp-menu-import-export-cli.git --allow-root

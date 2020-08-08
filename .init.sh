@@ -53,3 +53,5 @@ wp import https://github.com/woocommerce/woocommerce/blob/master/sample-data/sam
 wp wc product create --name="Test Product" --type=simple --sku=WCCLITESTP --regular_price=20 --authors=admin
 wp wc customer create --email='woo@woo.local' --user=1 --billing='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --shipping='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --password='hunter2' --username='mrbob' --first_name='Bob' --last_name='Tester'
 wp plugin install WooCommerce-Show-Attributes --activate
+wp plugin install rest-api --activate
+wp --info

@@ -47,9 +47,13 @@ wp option set --format=json woocommerce_ppec_paypal_settings '{"reroute_requests
 wp option set --format=json woocommerce_cheque_settings '{"enabled":"no"}'
 wp option set --format=json woocommerce_bacs_settings '{"enabled":"no"}'
 wp option set --format=json woocommerce_cod_settings '{"enabled":"yes"}'
+wp option set Site Title "titre du site"
+wp option set Tagline "Not just an another wordpress website"
+#
+#
 wp wc --user=admin tool run install_pages
 wp plugin install wordpress-importer --activate
-wp import https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.xml --authors=skip
+# wp import https://github.com/woocommerce/woocommerce/blob/master/sample-data/sample_products.xml --authors=skip
 wp wc product create --name="Test Product2" --type=simple --sku=WCCLITESTP1 --regular_price=201 --user=admin
 wp wc product create --name="Test Product1" --type=simple --sku=0WCCLITESTP1 --regular_price=20 --user=admin
 wp wc customer create --email='woo@woo.local' --user=1 --billing='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --shipping='{"first_name":"Bob","last_name":"Tester","company":"Woo", "address_1": "123 Main St.", "city":"New York", "state:": "NY", "country":"USA"}' --password='hunter2' --username='mrbob' --first_name='Bob' --last_name='Tester'

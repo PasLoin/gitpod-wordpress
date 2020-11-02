@@ -65,3 +65,6 @@ wp --info
 wp package install https://github.com/wpbullet/wp-menu-import-export-cli.git --allow-root
 # wp menu export --all --filename=menu.json --allow-root
 curl -N http://loripsum.net/api/5 | wp post generate --post_content --count=10
+curl -L https://raw.githubusercontent.com/woocommerce/woocommerce/master/sample-data/sample_products.xml -o sample_data_new.xml
+wp import sample_data_new.xml --authors=create
+

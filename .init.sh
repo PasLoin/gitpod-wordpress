@@ -49,7 +49,9 @@ wp option set --format=json woocommerce_bacs_settings '{"enabled":"no"}'
 wp option set --format=json woocommerce_cod_settings '{"enabled":"yes"}'
 wp option set Site Title "titre du site"
 wp option set Tagline "Not just an another wordpress website"
-wp option list
+# wp option list // option you can set in cli
+wp option set blogname "Ici le nom du site"
+wp option set blogdescription "Ici la description du blog"
 #
 wp wc --user=admin tool run install_pages
 wp plugin install wordpress-importer --activate

@@ -7,9 +7,9 @@ FROM gitpod/workspace-mysql
 ENV PHP_VERSION="7.4"
 ENV APACHE_DOCROOT="public_html"
 # Export environment variables
-ENV DATABASE_USER=root
-ENV DATABASE_HOST=127.0.0.1
-ENV DATABASE_PASSWORD=
+# ENV DATABASE_USER=root
+# ENV DATABASE_HOST=127.0.0.1
+# ENV DATABASE_PASSWORD=
 
 ### Setups, Node, NPM ###
 USER gitpod

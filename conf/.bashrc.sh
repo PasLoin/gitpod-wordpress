@@ -19,58 +19,74 @@ function wp-setup () {
     echo 'WordPress already installed'
     return 1
   fi
-  
-  DESTINATION=${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/wp-content/$1/${REPO_NAME}
 
   echo 'Please, wait ...'
 
   # this would cause mv below to match hidden files
   shopt -s dotglob
   
-  echo 'Creating MySQL user and database ...'
-  wp-init-database 1> /dev/null
-
   # move the workspace temporarily
   mkdir $HOME/workspace
   mv ${GITPOD_REPO_ROOT}/* $HOME/workspace/
-
-  echo 'Installing WordPress ...'
-  # create webserver root and install WordPress there
-  mkdir -p ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}
-  mv $HOME/wordpress/* ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/
-
-  # put the project files in the correct place
-  mkdir $DESTINATION
-  mv $HOME/workspace/* $DESTINATION
   
-  # create a wp-config.php
-  cp $HOME/gitpod-wordpress/conf/wp-config.php ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/wp-config.php
-
-  # Setup WordPress database
+  # create a debugger launch.json
+  mkdir -p ${GITPOD_REPO_ROOT}/.theia
+  mv $HOME/gitpod-wordpress/conf/launch.json ${GITPOD_REPO_ROOT}/.theia/launch.json
+  
+  # create a database for this WordPress
+  echo 'Creating MySQL user and database ...'
+  wp-init-database 1> /dev/null
+  
+  # install WordPress
+  echo 'Installing WordPress ...'
+  rm -rf ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}
+  mkdir -p ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}
   cd ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/
+  wp core download
+  cp $HOME/gitpod-wordpress/conf/wp-config.php ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/wp-config.php
   wp core install \
     --url="$(gp url 8080 | sed -e s/https:\\/\\/// | sed -e s/\\///)" \
     --title="WordPress" \
     --admin_user="admin" \
     --admin_password="password" \
     --admin_email="admin@gitpod.test"
+    
+  echo 'Downloading Adminer ...'
+  mkdir ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/database/
+  wget -q https://www.adminer.org/latest.php -O ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/database/index.php
+  
+  echo 'Creating phpinfo() page ...'
+  mkdir ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/phpinfo/
+  echo "<?php phpinfo(); ?>" > ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/phpinfo/index.php
 
+  # put the project files in the correct place
+  echo 'Creating project files ...'
+  PROJECT_PATH=${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/wp-content/$1/${REPO_NAME}
+  mkdir -p $PROJECT_PATH
+  mv $HOME/workspace/* ${PROJECT_PATH}
   cd $DESTINATION
+
   # install project dependencies
   if [ -f composer.json ]; then
     echo 'Installing Composer packages ...'
     composer update 2> /dev/null
   fi
+  
   if [ -f package.json ]; then
     echo 'Installing NPM packages ...'
     npm i 2> /dev/null
   fi
 
-  if [ -f $DESTINATION/.init.sh ]; then
+  if [ -f ${PROJECT_PATH}/.init.sh ]; then
+    echo '.init.sh detected ...'
+    cp ${PROJECT_PATH}/.init.sh ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/.init.sh
     echo 'Running your .init.sh ...'
-    /bin/sh $DESTINATION/.init.sh
+    cd ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/
+    /bin/bash ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/.init.sh
+    rm -rf ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/.init.sh
   fi
   
+  # finish
   shopt -u dotglob
   touch $FLAG
   

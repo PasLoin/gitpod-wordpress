@@ -63,3 +63,6 @@ RUN go get github.com/mailhog/MailHog && \
     chown gitpod:gitpod /usr/local/bin/wp
 
 USER gitpod
+### Child theme storefront ###
+RUN wget -q https://github.com/PasLoin/woo.delivery/archive/master.zip -O $HOME/gitpod-wordpress/woodelivery.zip && \
+    unzip -qn $HOME/gitpod-wordpress/woodelivery.zip -d $HOME/wordpress/wp-content/themes

@@ -2,7 +2,7 @@
 # License: MIT (c) 2020 Luiz Paulo "Bills"
 # Version: 0.6.1
 FROM gitpod/workspace-mysql
-
+ARG DEBIAN_FRONTEND=noninteractive
 ### General Settings ###
 ENV PHP_VERSION="7.4"
 ENV APACHE_DOCROOT="public_html"

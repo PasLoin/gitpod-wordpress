@@ -1,5 +1,5 @@
 <?php
-/*
+/**
 Plugin Name: Gitpod Test Plugin
 Version: 1.0.0
 Description: just another WordPress plugin

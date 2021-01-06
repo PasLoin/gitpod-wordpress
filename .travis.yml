@@ -4,8 +4,8 @@
 # For use with Storefront woodelivery WordPress childtheme
 # @link https://github.com/woocommerce/storefront/
 
-#TODO make this test for Storefront
-#TODO check how make test with woo
+# TODO make this test for Storefront
+# TODO check how make test with woo
 
 # Declare project language and PHP versions to test against.
 # @link http://about.travis-ci.org/docs/user/languages/php/
@@ -15,13 +15,9 @@ language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
-    - "7.2"
-    - "7.4"
-    - "7.0"
-    - "5.6"
-   
-#TODO check specific 5.6.36
-
+  - "8.0"
+  - "7.4"
+ 
 # Ditch sudo and use containers.
 # @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
 # @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
@@ -32,7 +28,7 @@ sudo: false
 env:
     # Trunk (current version in development is 4.4)
     # @link https://github.com/WordPress/WordPress
-    - WP_VERSION=master WP_MULTISITE=0
+  - WP_VERSION=master WP_MULTISITE=0
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -59,8 +55,8 @@ before_script:
     # TODO : problem to create the database
     
 services:
-- mysql
-- mysql -e 'CREATE DATABASE wordpress_test;' -uroot
+  - mysql
+  - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
 
     # Install CodeSniffer for WordPress Coding Standards checks.
     #- mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/master.tar.gz | tar xz --strip-components=1 -C php-codesniffer

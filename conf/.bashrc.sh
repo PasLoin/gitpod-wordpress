@@ -1,3 +1,4 @@
+#!/bin/bash
 # WordPress Setup Script
 export REPO_NAME=$(basename $GITPOD_REPO_ROOT)
 

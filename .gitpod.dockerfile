@@ -49,6 +49,7 @@ RUN go get github.com/mailhog/MailHog && \
         php${PHP_VERSION}-opcache \
         php-xdebug && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* && \
+    update-alternatives --set php /usr/bin/php${PHP_VERSION} && \
     cat /home/gitpod/gitpod-wordpress/conf/php.ini >> /etc/php/${PHP_VERSION}/apache2/php.ini && \
     ### Setup PHP in Apache ###
     a2dismod php* && \

@@ -39,19 +39,24 @@ function wp-setup () {
   wp-init-database 1> /dev/null
   
   # install WordPress
-  echo 'Installing WordPress ...'
+  
   rm -rf ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}
   mkdir -p ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}
   cd ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/
-  wp core download
+  
+  echo 'Downloading WordPress ...'
+  wp core download --path="${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/"
+  
+  echo 'Installing WordPress ...'
   cp $HOME/gitpod-wordpress/conf/wp-config.php ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/wp-config.php
   wp core install \
     --url="$(gp url 8080 | sed -e s/https:\\/\\/// | sed -e s/\\///)" \
     --title="WordPress" \
     --admin_user="admin" \
     --admin_password="password" \
-    --admin_email="admin@gitpod.test"
-    
+    --admin_email="admin@gitpod.test" \
+    --path="${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/"
+
   echo 'Downloading Adminer ...'
   mkdir ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/database/
   wget -q https://www.adminer.org/latest.php -O ${GITPOD_REPO_ROOT}/${APACHE_DOCROOT}/database/index.php
@@ -143,6 +148,3 @@ export -f browse-emails
 # use Node.js LTS
 nvm use lts/* > /dev/null
 export NODE_VERSION=$(node -v | sed 's/v//g')
-
-# WP-CLI auto completion
-. $HOME/wp-cli-completion.bash
